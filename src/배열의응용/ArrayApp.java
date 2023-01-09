@@ -23,11 +23,13 @@ public class ArrayApp {
 //        int[] arr2 = Arrays.copyOf(arr1, 10);
 //        for (int e: arr2) System.out.print(e + " ");
         // 얕은 복사와 깊은 복사
-        int[] arr1 = {1,2,3,4};
-        int[] arr2 = arr1;
+        int[] arr1 = {1,2,3,4,5};
+        //int[] arr2 = new int[10];
+        //System.arraycopy(arr1, 0, arr2, 0, arr1.length); // 실제 값이 복사되므로 깊은 복사
+        int[] arr2 = Arrays.copyOf(arr1, arr1.length);
         arr1[0] = 100;
-        for (int e: arr2) System.out.print(e + " ");
-        System.out.println();
         for (int e: arr1) System.out.print(e + " ");
+        System.out.println();
+        for (int e: arr2) System.out.print(e + " ");
     }
 }
