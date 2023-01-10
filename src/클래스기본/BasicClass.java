@@ -4,7 +4,7 @@ package 클래스기본;
 public class BasicClass {
     public static void main(String[] args) {
         Car g80 = new Car("g80");
-        System.out.println(g80.carName);
+        System.out.println(g80.Manufacturer);
         Car santafe = new Car("santafe");
         System.out.println(santafe.carName);
     }
