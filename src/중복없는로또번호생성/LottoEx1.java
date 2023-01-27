@@ -4,6 +4,8 @@ import com.sun.source.doctree.BlockTagTree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Vector;
 
 /*
     중복 없는 로또번호 생성하기
@@ -20,19 +22,14 @@ public class LottoEx1 {
         반복문을 순회하면서 랜덤함수를 이용해 배열에 로또번호 추가
         마지막에 배열에 포함된 로또번호 출력
      */
-        int[] lotto = new int[6];
-        int i = 0;
-        boolean isExist = false;
-        while (true){
-            if (i > 5) break;
-            int count = (int) ((Math.random() * 45) + 1 );
-            for (int j = 0; j< lotto.length; j++) {
-                if (lotto[j] == count) isExist = true;
-            }
-            if(isExist == false) {
-                lotto[i++] = count;
-            } else isExist = false;
+        List<Integer> lotto = new Vector<>();
+        int tmp;
+
+        while (true) {
+            tmp = (int) (Math.random() * 45) + 1;
+            if (!lotto.contains(tmp)) lotto.add(tmp);
+            if (lotto.size() == 6) break;
         }
-        System.out.println(Arrays.toString(lotto));
+        System.out.println(lotto);
     }
 }

@@ -1,5 +1,7 @@
 package X보다작은수;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -15,16 +17,13 @@ public class LessXMain {
         Scanner sc = new Scanner(System.in);
         System.out.print("배열의 길이와 찾을 수 입력 : ");
         int index = sc.nextInt();
-        int[] arr = new int[index];
         int findX = sc.nextInt();
+        List<Integer> arr = new ArrayList<>();
 
         System.out.print("배열 수만큼 숫자 입력 : ");
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextInt();
-        }
-        System.out.print("결과 값 : ");
-        for (int e : arr) {
-            if (e < findX) System.out.print(e + " ");
+        for (int i = 0; i < index; i++) {
+            arr.add(sc.nextInt());
+            if (arr.get(i) < findX) System.out.print(arr.get(i) + " ");
         }
     }
 }
