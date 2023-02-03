@@ -12,19 +12,24 @@ import java.util.*;
  */
 public class Pythagoras {
     public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
         int[] arr = new int[3];
         Scanner sc = new Scanner(System.in);
         while (true){
             for (int i = 0; i < arr.length; i++) {
                 int side = sc.nextInt();
-                if (side < 0) break;
                 arr[i] = side;
             }
+            if (arr[0] == 0 && arr[1] == 0 && arr[2] == 0) break;
             Arrays.sort(arr);
             if (Math.pow(arr[2], 2) == Math.pow(arr[0],2) + Math.pow(arr[1],2)) {
-                System.out.println("right");
+                list.add("right");
             }
-            else System.out.println("wrong");
+            else list.add("wrong");
+        }
+
+        for (String e : list) {
+            System.out.println(e);
         }
     }
 }
