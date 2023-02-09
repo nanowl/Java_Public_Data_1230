@@ -1,9 +1,10 @@
 package 해시맵커피;
 
 import java.awt.*;
+import java.io.Serializable;
 import java.util.Comparator;
 
-public class MenuInfo {
+public class MenuInfo implements Serializable {
     String name; // 메뉴이름
     int price; // 메뉴 가격
     String group; // 메뉴카테고리
@@ -14,6 +15,22 @@ public class MenuInfo {
         this.price = price;
         this.group = group;
         this.desc = desc;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public String getDesc() {
+        return desc;
     }
 }
 
